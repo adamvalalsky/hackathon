@@ -1,0 +1,81 @@
+<div id="login">
+  <div *ngIf="isSigningIn">
+    <form class="ui form">
+      <h1>Prihlásenie</h1>
+      <div class="field">
+        <label>Email:</label>
+        <input type="text" placeholder="Email">
+      </div>
+      <div class="field">
+        <label>Heslo</label>
+        <input type="password" placeholder="Heslo">
+      </div>
+      <button class="ui button" type="submit" (click)="login()">Prihlásiť</button>
+      <a  style="float:right; margin-top:5px" (click)="toggleLogin()" >{{ isSigningIn ? 'Don’t have an account? ' : 'Back to Login' }}</a>
+    </form>
+  </div>
+
+  <div *ngIf="!isSigningIn">
+    <div *ngIf="role == 'none'" class="ui grid">
+      <h1>Registrácia - vybratie roly</h1>
+      <div style="margin: 1em auto 0;width: 100%;display: flex;justify-content: space-around;">
+        <button class="ui primary button" (click)="setRole('doc')">
+          Som lekár
+        </button>
+        <button class="ui button" (click)="setRole('patient')">
+          Som pacient
+        </button>
+      </div>
+
+    </div>
+
+    <div *ngIf="role == 'patient'">
+      <form class="ui form">
+        <h1>Registrácia - pacient</h1>
+        <div class="field">
+          <label>Meno:</label>
+          <input type="text" placeholder="Meno">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="text" placeholder="Email">
+        </div>
+        <div class="field">
+          <label>Rodné číslo</label>
+          <input type="text" placeholder="Rodné číslo">
+        </div>
+        <div class="field">
+          <label>Heslo</label>
+          <input type="password" placeholder="Heslo">
+        </div>
+        <button class="ui button" type="submit" (click)="login()">Registrovať</button>
+      </form>
+
+    </div>
+
+    <div *ngIf="role == 'doc'">
+      <form class="ui form">
+        <h1>Registrácia - lekár</h1>
+        <div class="field">
+          <label>Meno:</label>
+          <input type="text" placeholder="Meno">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="text" placeholder="Email">
+        </div>
+        <div class="field">
+          <label>Odvetvie</label>
+          <input type="text" placeholder="Odvetvie">
+        </div>
+        <div class="field">
+          <label>Heslo</label>
+          <input type="password" placeholder="Heslo">
+        </div>
+        <button class="ui button" type="submit" (click)="login()">Registrovať</button>
+      </form>
+    </div>
+  </div>
+
+
+</div>

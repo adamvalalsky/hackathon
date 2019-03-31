@@ -1,0 +1,19 @@
+<div class="ui secondary pointing menu teal inverted">
+  <a class="item" routerLink="/user-dashboard">
+    Domov
+  </a>
+  <div class="right menu">
+    <a class="ui item" routerLink="/">
+      Odhlásiť
+    </a>
+  </div>
+</div>
+
+<div>
+  <h6>Objednávky na dňa:</h6>
+  <p>{{ date.date | date }}</p>
+</div>
+
+<div *ngFor="let term of terms[0]" [class]="getStyle(term.available)" (click)="redirectForward(term.available, term.term)">
+  <p>{{ term.term }}</p>
+</div>

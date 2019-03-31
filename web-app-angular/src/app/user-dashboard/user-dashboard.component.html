@@ -1,0 +1,44 @@
+<div class="ui secondary pointing menu teal inverted">
+  <a class="active item" routerLink="/user-dashboard">
+    Domov
+  </a>
+  <div class="right menu">
+    <a class="ui item" routerLink="/">
+      Odhlásiť
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="search-doctor">
+    <form class="ui form" (submit)="onTextChange(name)">
+      <h2>Vyhľadávanie lekára</h2>
+      <div class="field">
+        <div class="ui icon input">
+          <input type="text" placeholder="Search..." name="name" [(ngModel)]="name" autocomplete="off">
+          <i class="search icon"></i>
+        </div>
+      </div>
+    </form>
+
+      <div *ngIf="seeDoctors">
+        <h4>Nájdení lekári</h4>
+        <div *ngFor="let doctor of sortDoctor">
+          <a routerLink="/doctor-detail/{{ doctor.id }}">
+            <p><b>{{ doctor.name }}</b> ({{ doctor.area.name }})</p>
+          </a>
+          <hr>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="your-doctors" style="margin-top:2em">
+    <h3>Vaši lekári</h3>
+    <div *ngFor="let doc of doctors" class="container cursor" routerLink="/my-doctor/{{ doc.id }}">
+      <p><b>{{ doc.name }}</b> ({{ doc.area.name }})</p>
+      <hr>
+    </div>
+  </div>
+
+</div>

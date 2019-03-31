@@ -1,0 +1,63 @@
+.grey{
+    background: grey;
+}
+.red{
+    background: red;
+}
+.green{
+    background: green;
+}
+.calendar {
+    max-width: 720px;
+    background: #6FFFE9;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    color: white;
+}
+.no-day {
+
+  width: calc(100%/7);
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+}
+.day {
+  cursor: pointer;
+    width: calc(100%/7);
+    float: left;
+    background: #53afad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    border:0.1px solid #479896;
+    transition: all 300ms ease-in-out ;
+}
+
+.day:hover, .day.weekend{
+  background: #479896;
+}
+
+
+.control, .date_name{
+  background-color: #1C2541;
+  color:white;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em 0;
+}
+.date_name div{
+  width: calc(100%/7);
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.control div{
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+@import url("normalize.css");
+
+
+html,body{
+	background-image: url("images/bg.png");
+	background-position: center;
+	background-size: cover;
+}
+
+::selection {
+  background: none; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: none; /* Gecko Browsers */
+}

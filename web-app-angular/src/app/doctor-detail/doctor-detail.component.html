@@ -1,0 +1,16 @@
+<div class="ui secondary pointing menu teal inverted">
+  <a class="item" routerLink="/user-dashboard">
+    Domov
+  </a>
+  <div class="right menu">
+    <a class="ui item" routerLink="/">
+      Odhlásiť
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <h1>{{ doctor.name }}</h1>
+  <h3>{{ doctor.area.name }}</h3>
+  <button (click)="sendInvitation(1)" class="ui teal button">Pridať lekára</button><!--  poslat id usera tu  -->
+</div>

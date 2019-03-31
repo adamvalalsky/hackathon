@@ -1,0 +1,40 @@
+<div class="ui secondary pointing menu teal inverted">
+  <a class="item" routerLink="/user-dashboard">
+    Domov
+  </a>
+  <div class="right menu">
+    <a class="ui item" routerLink="/">
+      Odhlásiť
+    </a>
+  </div>
+</div>
+
+
+<div class="container">
+  <div>
+    <h2>{{ doctor.name }}</h2>
+    <h3>{{ doctor.area.name }}</h3>
+  </div>
+
+  <div class="calendar">
+    <div class="control">
+      <div (click)="switchMonth('previous')">Predošlý mesiac</div>
+      <div><b>{{month_name}}</b></div>
+      <div (click)="switchMonth('next')">Ďaľší mesiac</div>
+    </div>
+    <div class="date_name">
+      <div>Pondelok</div>
+      <div>Utorok</div>
+      <div>Streda</div>
+      <div>Štvrtok</div>
+      <div>Piatok</div>
+      <div>Sobota</div>
+      <div>Nedeľa</div>
+    </div>
+    <div *ngFor="let no_day of no_days" class="no-day"></div>
+    <div *ngFor="let day of calendar" class="day" [ngClass]="day.color "  (click)="navigateToTermin(day.color, day.day)">
+      {{ day.day }}
+    </div>
+  </div>
+
+</div>

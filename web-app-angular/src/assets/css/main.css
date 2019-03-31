@@ -1,0 +1,14 @@
+body.bg-gradient{
+  background-image: url("/assets/images/bg.png");
+  background-position: center;
+  border-style: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a{
+  cursor: pointer;
+}
+*{
+  box-sizing: border-box;
+}
